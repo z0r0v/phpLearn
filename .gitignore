@@ -26,3 +26,8 @@ nbproject/
 
 # SSL Certs
 etc/ssl/
+
+.env
+doc/
+docker-compose.yml
+etc/
