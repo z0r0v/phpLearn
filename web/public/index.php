@@ -8,6 +8,7 @@ $isUserlogin = new App\Acme\Isuserlogin();
 $operators = new App\Acme\Operators();
 $cycle = new App\Acme\Cycle();
 $get = new App\Acme\Get();
+$post = new App\Acme\Post();
 
 ?>
 <!DOCTYPE html>
@@ -15,46 +16,48 @@ $get = new App\Acme\Get();
 <head>
     <meta charset="utf-8">
     <title>Docker <?php echo $foo->getName(); ?></title>
+    <link rel="stylesheet/less" type="text/css" href="styles.less"/>
 </head>
 <body>
-<!--    <p>Get name:</p>-->
-<!--    <h1>Docker --><?php //echo $foo->getName(); ?><!--</h1>-->
-<!---->
-<!--    <p>Start:</p>-->
-<!--    <div>--><?php //echo $start->getVariableArray(); ?><!--</div>-->
-<!--    <p>Is user login:</p>-->
-<!--    <div>--><?php //echo $isUserlogin->isUserLogin(); ?><!--</div>-->
-<!---->
-<!--    <p>Operators:</p>-->
-<!--    <div>--><?//= $operators->getOperators(); ?><!--</div>-->
-<!---->
-<!--    <p>Cycle:</p>-->
-<!--    <div>--><?//= $cycle->getCycle(); ?><!--</div>-->
-<!--    <div>--><?//= $cycle->getTemplateColors() ?><!--</div>-->
-<!--    <div>--><?//= $cycle->getWhile(); ?><!--</div>-->
-
-    <p>Get URL:</p>
-    <div><?= $get->getGet(); ?></div>
-    <div>
-        <p>Input your name</p>
+<div class="items">
+    <div class="item">
+        <h3>Get URL:</h3>
+        <div><?= $get->getUrl(); ?></div>
+    </div>
+    <div class="item">
+        <h3>Input your name</h3>
         <form>
             <input type="text" name="userName">
             <input type="submit" name="">
         </form>
-
-        <p><?= $get->getUrl(); ?></p>
-
-        <p>Input your number</p>
+        <p class="hello-user-name"><?= $get->getHelloUserName(); ?></p>
+    </div>
+    <div class="item">
+        <h3>Input your number</h3>
+        <p><?= $get->getMessage(); ?></p>
         <form>
-            <input type="text" name="numberEvenOdd">
+            <input type="text" name="numberEvenOdd" type="number">
             <input type="submit" name="">
         </form>
-
-        <p><?= $get->СheckNumberOddEven(); ?></p>
-
-
     </div>
-
+    <div class="item">
+        <h3>Post Method: </h3>
+        <form method="post">
+            <p>Enter your login</p>
+            <input type="text" name="login" type="text">
+            <p>Enter your pass</p>
+            <input type="text" name="pass" type="number">
+            <input type="submit" name="">
+            <div class="message" style="color:<?= $post->getColor(); ?>">
+                <?= $post->getMessage(); ?>
+            </div>
+        </form>
+    </div>
+</div>
+<!--scripts-->
+<!--TODO: dont work FIX => -->
+<script src="less.js"></script>
+<script src="js/app.js" type="module"></script>
 </body>
 </html>
 

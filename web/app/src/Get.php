@@ -11,33 +11,41 @@ namespace App\Acme;
  */
 class Get
 {
-    public function getGet()
+    public function getUrl()
     {
-
-//        /?userName=Jon&page=mainPage
-
         print_r($_GET);
-        echo '</br></br>';
-        echo $_GET['userName'];
-        echo '</br></br>';
-        echo $_GET['page'];
     }
 
-    public function getUrl()
+
+    public function getHelloUserName()
     {
         echo 'Hello ' . $_GET['userName'] . '!';
     }
 
-    public function СheckNumberOddEven()
+    public function getTextAfterCheckNuberOddEven($number)
+    {
+        ($number % 2 === 0) ? $text = ' - Number is Even' : $text = ' - Number is Odd';
+
+        return $text;
+    }
+
+    public function getMessage()
     {
         $number = $_GET['numberEvenOdd'];
 
-        $text = '';
-
-        ($number % 2 === 0) ? $text = ' - even' : $text = ' - odd';
-
         if ($number) {
-            return $number . $text;
+
+            if (floor($number) == $number && is_numeric($number)) {
+
+                $text = $this->getTextAfterCheckNuberOddEven($number);
+
+                return $number . $text;
+            } else {
+                return $number . " - Number don't integer or not a Number";
+            }
+
+        } else {
+            return 'Send number';
         }
     }
 }
