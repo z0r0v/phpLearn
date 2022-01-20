@@ -1,0 +1,19 @@
+{
+  "name": "phpLearn",
+  "description": "phpLearn",
+  "type": "project",
+  "version": "1.0.0",
+  "license": [
+    "GFDL-1.1"
+  ],
+  "require": {
+    "php": "~7.4.0"
+  },
+  "authors": [
+    {
+      "name": "Aliaksei Zhorau",
+      "email": "3767082@mail.ru",
+      "homepage": "https://aliakseizhorau.web.app/",
+      "role": "Developer"
+    }
+}

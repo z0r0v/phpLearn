@@ -1,21 +1,9 @@
 <?php
 
-/**
- * I belong to a file
- */
-
 namespace App\Acme;
 
-/**
- * I belong to a class
- */
 class Cycle
 {
-
-    /**
-     * Gets the name of the application.
-     */
-
     public $colors = array('red', 'orange', 'yellow', 'green', 'violet');
 
     public function getCycle()
