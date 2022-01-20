@@ -1,0 +1,15 @@
+@import 'css/items.css';
+
+body, html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+    background: #f6f6f2;
+}
+
+.container {
+  margin: 0 10%;
+  padding: 50px 0;
+}
