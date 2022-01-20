@@ -28,6 +28,7 @@ $count = 0;
 <body>
 <div class="container">
     <div class="box items">
+<!--        TODO: set counter-->
         <div class="item"><?php  $cycle->getCycle(); ?></div>
         <div class="item"><?php  $cycle->getTemplateColors(); ?></div>
         <div class="item"><?php  $cycle->getWhile(); ?></div>
