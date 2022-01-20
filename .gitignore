@@ -31,3 +31,4 @@ etc/ssl/
 doc/
 docker-compose.yml
 etc/
+node_modules/
