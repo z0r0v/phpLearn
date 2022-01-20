@@ -1,14 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 include '../app/vendor/autoload.php';
 
-$foo = new App\Acme\Foo();
-$start = new App\Acme\Start();
-$isUserlogin = new App\Acme\Isuserlogin();
-$operators = new App\Acme\Operators();
-$cycle = new App\Acme\Cycle();
-$get = new App\Acme\Get();
-$post = new App\Acme\Post();
+use App\Acme\{Foo, Start, Isuserlogin, Operators, Cycle, Get, Post};
+
+$foo = new Foo();
+$start = new Start();
+$isUserlogin = new Isuserlogin();
+$operators = new Operators();
+$cycle = new Cycle();
+$get = new Get();
+$post = new Post();
 
 ?>
 <!DOCTYPE html>
@@ -16,10 +20,10 @@ $post = new App\Acme\Post();
 <head>
     <meta charset="utf-8">
     <title>Docker <?php echo $foo->getName(); ?></title>
-    <link rel="stylesheet/less" type="text/css" href="styles.less"/>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="items">
+<div class="box items">
     <div class="item">
         <h3>Get URL:</h3>
         <div><?= $get->getUrl(); ?></div>
@@ -54,9 +58,11 @@ $post = new App\Acme\Post();
         </form>
     </div>
 </div>
+<div class="box items">
+
+</div>
 <!--scripts-->
 <!--TODO: dont work FIX => -->
-<script src="less.js"></script>
 <script src="js/app.js" type="module"></script>
 </body>
 </html>
