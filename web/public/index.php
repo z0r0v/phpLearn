@@ -31,7 +31,7 @@ $count = 0;
         <div class="item"><?php  $cycle->getCycle(); ?></div>
         <div class="item"><?php  $cycle->getTemplateColors(); ?></div>
         <div class="item"><?php  $cycle->getWhile(); ?></div>
-        <div class="item"><?php  $cycle->getWhile(); ?></div>
+        <div class="item"><?php  $isUserlogin->isUserLogin(); ?></div>
 
     </div>
     <div class="box items">
