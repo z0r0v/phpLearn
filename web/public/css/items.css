@@ -1,0 +1,20 @@
+.items {
+  display: flex;
+}
+
+.items .item {
+  width: calc(100% / 4);
+  padding: 15px;
+  margin: 2px;
+  border: 1px solid lightgrey;
+  border-radius: 2%;
+}
+
+.items .item input {
+  display: block;
+  width: 80%;
+  height: 20px;
+  margin-bottom: 15px;
+  padding: 0;
+  border: 1px solid lightgrey;
+}
