@@ -8,6 +8,7 @@ namespace App\Acme;
  */
 class AnInclude
 {
+    public const URL = 'https://aliakseizhorau.web.app/';
     /**
      * @return string
      */
@@ -19,8 +20,11 @@ class AnInclude
     /**
      * @return string
      */
+    //        TODO: type
     public function getFileContents()
     {
-        return file_get_contents('https://aliakseizhorau.web.app/');
+//        TODO: why nests all containers from below?
+//        return file_get_contents(self::URL);
+        return '';
     }
 }

@@ -1,0 +1,41 @@
+<?php
+
+
+namespace App\Acme;
+
+/**
+ * Class OpenWeatherMap
+ * @package App\Acme
+ */
+class OpenWeatherMap
+{
+    public const API_KEY = "a30fc526a3eddb84eee5da3d388c2bd6";
+    public const API_OPEN_WEATHER_MAP_ORG = "api.openweathermap.org/data/2.5/weather";
+    public const CITY_NAME = 'London';
+    public const Q_PARaM = '?q=';
+    public const APID = '&appid=';
+
+    /**
+     * @return string
+     */
+    public function getNameCity(): string
+    {
+        return self::CITY_NAME;
+    }
+
+    /**
+     * @return string
+     */
+    private function getRequest(): string
+    {
+        return self::API_OPEN_WEATHER_MAP_ORG . self::Q_PARaM . self::CITY_NAME . self::APID . self::API_KEY;
+    }
+
+    /**
+     * @return string
+     */
+    public function getWeather(): string
+    {
+        return $this->getRequest();
+    }
+}

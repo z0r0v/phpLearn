@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 include '../app/vendor/autoload.php';
 
-use App\Acme\{Foo, Start, Isuserlogin, Operators, Cycle, Get, Post, AnInclude, Counter};
+use App\Acme\{Foo, Start, Isuserlogin, Operators, Cycle, Get, Post, AnInclude, Counter, OpenWeatherMap};
 
 $counter = new Counter();
 $foo = new Foo();
@@ -15,6 +15,7 @@ $cycle = new Cycle();
 $get = new Get();
 $post = new Post();
 $anInclude = new AnInclude();
+$openWeatherMap = new OpenWeatherMap();
 $count = 0;
 
 ?>
@@ -26,23 +27,26 @@ $count = 0;
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<!--container tets-->
 <div class="container">
     <div class="box items">
-<!--        TODO: set counter-->
-        <div class="item"><?php  $cycle->getCycle(); ?></div>
-        <div class="item"><?php  $cycle->getTemplateColors(); ?></div>
-        <div class="item"><?php  $cycle->getWhile(); ?></div>
-        <div class="item"><?php  $isUserlogin->isUserLogin(); ?></div>
-
+        <!--        TODO: set counter-->
+        <div class="item"><?php $cycle->getCycle(); ?></div>
+        <div class="item"><?php $cycle->getTemplateColors(); ?></div>
+        <div class="item"><?php $cycle->getWhile(); ?></div>
+        <div class="item"><?php $isUserlogin->isUserLogin(); ?></div>
     </div>
     <div class="box items">
         <div class="item">
-            <span><?php $count = $counter->getCounterNumber($count); echo $count?></span>
+            <span><?php $count = $counter->getCounterNumber($count);
+                echo $count ?></span>
             <h3>Get URL:</h3>
             <div><?= $get->getUrl(); ?></div>
         </div>
         <div class="item">
-            <span><?php $count = $counter->getCounterNumber($count); echo $count?></span>
+            <span><?php $count = $counter->getCounterNumber($count);
+                echo $count ?></span>
             <h3>Input your name</h3>
             <form>
                 <input type="text" name="userName">
@@ -51,7 +55,8 @@ $count = 0;
             <p class="hello-user-name"><?= $get->getHelloUserName(); ?></p>
         </div>
         <div class="item">
-            <span><?php $count = $counter->getCounterNumber($count); echo $count?></span>
+            <span><?php $count = $counter->getCounterNumber($count);
+                echo $count ?></span>
             <h3>Input your number</h3>
             <p><?= $get->getMessage(); ?></p>
             <form>
@@ -60,7 +65,8 @@ $count = 0;
             </form>
         </div>
         <div class="item">
-            <span><?php $count = $counter->getCounterNumber($count); echo $count?></span>
+            <span><?php $count = $counter->getCounterNumber($count);
+                echo $count ?></span>
             <h3>Post Method: </h3>
             <form method="post">
                 <p>Enter your login</p>
@@ -76,17 +82,37 @@ $count = 0;
     </div>
     <div class="box items">
         <div class="item">
-            <span><?php $count = $counter->getCounterNumber($count); echo $count?></span>
+            <span><?php $count = $counter->getCounterNumber($count);
+                echo $count ?></span>
             <?php $anInclude->getInclude(); ?>
         </div>
     </div>
+</div>
+
+<!--include Saite-->
+<div class="container">
     <div class="box items site">
         <div class="site-content">
-            <?= $anInclude->getFileContents(); ?>
+            <?php $anInclude->getFileContents(); ?>
         </div>
     </div>
-
 </div>
+
+<!--include Weather-->
+<div class="container">
+    <div class="box items weather">
+        <h1>Weather in <?= $openWeatherMap->getNameCity(); ?></h1>
+        <form>
+            <label for="city">Input your City</label>
+            <input class="form-control" type="text" name="city"  id="city" placeholder="Minsk" aria-describedby="Forcast city">
+            <button class="primary-btn" type="submit">Submit</button>
+        </form>
+        <div>
+            <?= $openWeatherMap->getWeather(); ?>
+        </div>
+    </div>
+</div>
+
 <!--scripts-->
 <!--TODO: dont work FIX => -->
 <script src="js/app.js" type="module"></script>
