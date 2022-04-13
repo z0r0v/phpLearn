@@ -1,6 +1,21 @@
 .weather {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 500px;
-  background: url(../img/thunderstorm-3625405__480.jpg) no-repeat;
-  background-size: cover;
+}
+
+.weather-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.items.weather {
+  justify-content: center;
 }

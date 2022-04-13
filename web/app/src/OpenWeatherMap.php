@@ -31,11 +31,17 @@ class OpenWeatherMap
         return self::API_OPEN_WEATHER_MAP_ORG . self::Q_PARaM . self::CITY_NAME . self::APID . self::API_KEY;
     }
 
-    /**
-     * @return string
-     */
-    public function getWeather(): string
+
+    //Have a problem with json_decode!!!!!!!!!!!!!!
+    public function getWeather()
     {
-        return $this->getRequest();
+
+        $weatherUrl = $this->getRequest();
+        $forCastArray = json_decode($weatherUrl, true);
+
+        var_dump("weatherUrl",  $weatherUrl);
+        var_dump("forCastArray", $forCastArray);
+        print_r($forCastArray);
+
     }
 }

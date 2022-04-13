@@ -101,12 +101,14 @@ $count = 0;
 <!--include Weather-->
 <div class="container">
     <div class="box items weather">
+        <img class="weather-bg" src="img/thunderstorm-3625405__480.jpg" alt="">
         <h1>Weather in <?= $openWeatherMap->getNameCity(); ?></h1>
         <form>
             <label for="city">Input your City</label>
             <input class="form-control" type="text" name="city"  id="city" placeholder="Minsk" aria-describedby="Forcast city">
             <button class="primary-btn" type="submit">Submit</button>
         </form>
+
         <div>
             <?= $openWeatherMap->getWeather(); ?>
         </div>
