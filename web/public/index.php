@@ -110,7 +110,7 @@ $count = 0;
         </form>
 
         <div>
-            <?= $openWeatherMap->getWeather(); ?>
+            <?= $openWeatherMap->getWeatherArray(); ?>
         </div>
     </div>
 </div>
